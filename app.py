@@ -3,10 +3,10 @@ import json
 
 app = Flask(__name__)
 
-with open('./MyData.json', 'r', encoding='utf-8') as d_file:
+with open('MyData.json', 'r', encoding='utf-8') as d_file:
     data = json.load(d_file)
 
-with open('./hypotheses.json', 'r', encoding='utf-8') as h_file:
+with open('hypotheses.json', 'r', encoding='utf-8') as h_file:
     hypos = json.load(h_file)
 
 def calculate_score(student, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10):
