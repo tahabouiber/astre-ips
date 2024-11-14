@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphique ASTRE/IPS</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .column {
+            width: 48%;
+        }
+
+        .slider-container {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .slider-container h4 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .slider-container input {
+            width: 100%;
+        }
+
+        .slider-container p {
+            font-size: 14px;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+
+        .slider-container span {
+            font-size: 14px;
+        }
+
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 2px;
+        }
+
+        .counter-box-ips {
+            background-color: #2250AF;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        .counter-box-ips p {
+            margin: 0;
+        }
+
+
+
+        .counter-box-ips {
+            font-weight: bold;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .counter-box-ips span {
+            font-weight: bold;
+            font-size: 28px;
+            color: #ffffff;
+        }
+
+        .counter-box-astre {
+            background-color: #FF2257;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 16px;
+            width: 250px;
+        }
+
+        .counter-box-astre p {
+            margin: 0;
+        }
+
+
+        .counter-box-astre{
+            font-weight: bold;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .counter-box-astre span{
+            font-weight: bold;
+            font-size: 28px;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container" style="width: 70%; height: 500px; margin-left: 250px;"></div>
+    
+    <div class="counter">
+        <div class="counter-box-astre">
+            <p>Étudiants ASTRE :  <span id="astre_count">0</span></p>
+        </div>
+        <div class="counter-box-ips">
+            <p>Étudiants IPS : <span id="ips_count">0</span></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column" id="astre_sliders">
+            <h3>Hypotheses ASTRE</h3>
+            <div class="slider-container">
+                <h4>H1: Es-tu plutôt manuel ou informatique ? (Manuel)</h4>
+                <input type="range" id="q6" min="0" max="10" value="7">
+                <span id="q6_value">7</span>
+            </div>
+            <div class="slider-container">
+                <h4>H2: Qu'est-ce que tu as sur ton bureau ? (Arduino)</h4>
+                <input type="range" id="q7" min="0" max="10" value="2">
+                <span id="q7_value">2</span>
+            </div>
+            <div class="slider-container">
+                <h4>H3: Envisages-tu un travail sans code/programmation plus tard ? (Oui)</h4>
+                <input type="range" id="q8" min="0" max="10" value="3">
+                <span id="q8_value">3</span>
+            </div>
+            <div class="slider-container">
+                <h4>H4: Dans la liste d’entreprise ci-dessous, lesquelles pourraient t’intéresser ? (STMicroelectronics)</h4>
+                <input type="range" id="q9" min="0" max="10" value="8">
+                <span id="q9_value">8</span>
+            </div>
+            <div class="slider-container">
+                <h4>H5: Quelle(s) association(s) et/ou événement(s) t’intéressent ? (EnsimElec)</h4>
+                <input type="range" id="q10" min="0" max="10" value="7">
+                <span id="q10_value">7</span>
+            </div>
+        </div>
+
+        <div class="column">
+            <h3>Hypotheses IPS</h3>
+            <div class="slider-container">
+                <h4>H1: Quelle(s) association(s) et/ou événement(s) t’intéressent ? (ENSIMersion ou 24 du code)</h4>
+                <input type="range" id="q1" min="0" max="10" value="7">
+                <span id="q1_value">7</span>
+            </div>
+            <div class="slider-container">
+                <h4>H2: Quels langages informatiques connais-tu ? (Java)</h4>
+                <input type="range" id="q2" min="0" max="10" value="9">
+                <span id="q2_value">9</span>
+            </div>
+            <div class="slider-container">
+                <h4>H3: Quelles activités te passionnent le plus ? (Jouer aux jeux vidéos)</h4>
+                <input type="range" id="q3" min="0" max="10" value="2">
+                <span id="q3_value">2</span>
+            </div>
+            <div class="slider-container">
+                <h4>H4: Envisages-tu l’auto-entreprenariat ? (Oui)</h4>
+                <input type="range" id="q4" min="0" max="10" value="8">
+                <span id="q4_value">8</span>
+            </div>
+            <div class="slider-container">
+                <h4>H5: Dans la liste d’entreprise ci-dessous, lesquelles pourraient t’intéresser ? (Ubisoft)</h4>
+                <input type="range" id="q5" min="0" max="10" value="1">
+                <span id="q5_value">1</span>
+            </div>
+        </div>
+    </div>
+
+    <script>      
+        $('input[type="range"]').on('input', function() {
+            var sliderId = $(this).attr('id');
+            $("#" + sliderId + "_value").text($(this).val());
+        });
+
+        function updateChart() {
+            var q1 = parseInt($("#q1").val());
+            var q2 = parseInt($("#q2").val());
+            var q3 = parseInt($("#q3").val());
+            var q4 = parseInt($("#q4").val());
+            var q5 = parseInt($("#q5").val());
+            var q6 = parseInt($("#q6").val());
+            var q7 = parseInt($("#q7").val());
+            var q8 = parseInt($("#q8").val());
+            var q9 = parseInt($("#q9").val());
+            var q10 = parseInt($("#q10").val());
+
+            $.getJSON('/update_scores', {
+                q1: q1, q2: q2, q3: q3, q4: q4, q5: q5, 
+                q6: q6, q7: q7, q8: q8, q9: q9, q10: q10
+            }, function(data) {
+                let ipsCount = 0;
+                let astreCount = 0;
+                data.forEach(student => {
+                    if (student.data[0] > student.data[1]) {
+                        ipsCount++;
+                    } else {
+                        astreCount++;
+                    }
+                });
+
+                $('#ips_count').text(ipsCount);
+                $('#astre_count').text(astreCount);
+
+                Highcharts.chart('container', {
+                    chart: {
+                        type: 'bar'
+                    },
+                    title: {
+                        text: "Probabilité d'appartenance à IPS ou ASTRE"
+                    },
+                    xAxis: {
+                        categories: data.map(student => student.name),
+                        title: {
+                            text: 'Étudiants'
+                        },
+                        reversed: true
+                    },
+                    yAxis: {
+                        min: -100,
+                        max: 100,
+                        title: {
+                            text: 'Score (%)'
+                        }
+                    },
+                    tooltip: {
+                        formatter: function() {
+                            return '<b>' + this.series.name + '</b><br>' + 
+                                   this.x + ': ' + Math.abs(this.y) + '%';
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            stacking: 'normal'
+                        }
+                    },
+                    series: [
+                        
+                        {
+                            name: 'ASTRE',
+                            data: data.map(student => -student.data[1]),
+                            color: '#FF2257',
+                            pointPadding: 0.1
+                        },
+                        {
+                            name: 'IPS',
+                            data: data.map(student => student.data[0]),
+                            color: '#2250AF',
+                            pointPadding: 0.1
+                        }
+                    ]
+                });
+            });
+        }
+
+        updateChart();
+
+        $('input[type="range"]').on('input', updateChart);
+    </script>
+</body>
+</html>

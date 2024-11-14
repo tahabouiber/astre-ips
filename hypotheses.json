@@ -1,0 +1,62 @@
+[
+    {
+        "filiere": "IPS",
+        "question":"5. Quelle(s) association(s) et/ou événement(s) t’intéressent ?",
+        "reponse":"ENSIMersion, 24h du code",
+        "initial_score":"7"
+    },
+    {
+        "filiere": "IPS",
+        "question":"12. Quels sont les langages informatiques que tu as pratiqué? ",
+        "reponse":"Java",
+        "initial_score":"9"
+    },
+    {
+        "filiere": "IPS",
+        "question":"20. Quelles activités te passionnent le plus? (3 choix maximum) ",
+        "reponse":"Jouer aux jeux vidéos",
+        "initial_score":"2"
+    },
+    {
+        "filiere": "IPS",
+        "question":"9. Envisages-tu l’auto-entreprenariat ? ",
+        "reponse":"Oui",
+        "initial_score":"8"
+    },
+    {
+        "filiere": "IPS",
+        "question":"10. Dans la liste d’entreprise ci-dessous, lesquelles pourraient t’intéresser ? ",
+        "reponse":"Ubisoft",
+        "initial_score":"1"
+    },
+    {
+        "filiere": "ASTRE",
+        "question":"11. Es-tu plutôt : (3 choix maximum) ",
+        "reponse":"Manuel",
+        "initial_score":"7"
+    },
+    {
+        "filiere": "ASTRE",
+        "question":"17. Qu'est-ce que tu as sur ton bureau ?",
+        "reponse":"Arduino",
+        "initial_score":"2"
+    },
+    {
+        "filiere": "ASTRE",
+        "question":"21. Envisagez vous un travail sans code/programmation plus tard ?",
+        "reponse":"Oui",
+        "initial_score":"3"
+    },
+    {
+        "filiere": "ASTRE",
+        "question":"10. Dans la liste d’entreprise ci-dessous, lesquelles pourraient t’intéresser ? ",
+        "reponse":"STMicroelectronics",
+        "initial_score":"8"
+    },
+    {
+        "filiere": "ASTRE",
+        "question":"5. Quelle(s) association(s) et/ou événement(s) t’intéressent ?",
+        "reponse":"EnsimElec",
+        "initial_score":"7"
+    }
+]
